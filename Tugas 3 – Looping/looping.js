@@ -15,7 +15,7 @@ console.log('LOOPING KEDUA');
 var j = 20;
 while (j >= 2) {
 
-    console.log(`${j} - I love coding`);
+    console.log(`${j} - I will become a mobile developer`);
 
     j-= 2;
 }
