@@ -45,9 +45,6 @@ function arrayToObject(arr) {
             }
         }
 
-        // for (let j = 0; j < arr[i].length; j++) {
-            
-        // }
     }
 
     return output
@@ -198,9 +195,25 @@ function naikAngkot(arrPenumpang) {
           naikDari: arrPenumpang[i][1],
           tujuan: arrPenumpang[i][2],
           bayar: 0
-      };
+      }
 
       let sign = false
+      if(temp.tujuan < temp.naikDari) {
+        for (let j = rute.length-1; j >= 0; j--) {
+            if (rute[j] === temp.tujuan) {
+                break;
+            } else if (rute[j] == temp.naikDari) {
+                sign = true;
+            }
+    
+            if (sign) {
+                temp.bayar+= 2000;
+            }
+    
+          }
+      }
+
+      
       for (let j = 0; j < rute.length; j++) {
         if (rute[j] === temp.tujuan) {
             break;
