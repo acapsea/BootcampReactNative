@@ -199,7 +199,22 @@ function naikAngkot(arrPenumpang) {
 
       let sign = false
       if(temp.tujuan < temp.naikDari) {
+
         for (let j = rute.length-1; j >= 0; j--) {
+            if (rute[j] === temp.tujuan) {
+                break;
+            } else if (rute[j] == temp.naikDari) {
+                sign = true;
+            }
+    
+            if (sign) {
+                temp.bayar+= 2000;
+            }
+    
+          }
+      } else {
+
+        for (let j = 0; j < rute.length; j++) {
             if (rute[j] === temp.tujuan) {
                 break;
             } else if (rute[j] == temp.naikDari) {
@@ -213,20 +228,6 @@ function naikAngkot(arrPenumpang) {
           }
       }
 
-      
-      for (let j = 0; j < rute.length; j++) {
-        if (rute[j] === temp.tujuan) {
-            break;
-        } else if (rute[j] == temp.naikDari) {
-            sign = true;
-        }
-
-        if (sign) {
-            temp.bayar+= 2000;
-        }
-
-      }
-
       output.push(temp)
   }
 
@@ -235,6 +236,7 @@ function naikAngkot(arrPenumpang) {
  
 //TEST CASE
 console.log(naikAngkot([['Dimitri', 'B', 'F'], ['Icha', 'A', 'B']]));
+console.log(naikAngkot([['Dimitri', 'F', 'C'], ['Icha', 'F', 'A']]));
 // [ { penumpang: 'Dimitri', naikDari: 'B', tujuan: 'F', bayar: 8000 },
 //   { penumpang: 'Icha', naikDari: 'A', tujuan: 'B', bayar: 2000 } ]
  
