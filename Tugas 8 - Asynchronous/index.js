@@ -7,20 +7,18 @@ var books = [
 ]
 
 let time = 10000;
+let i = 0;
 
-readBooks(time, books[0], function(remain){
-    if (remain) {
-        return readBooks(remain, books[1], (remain) => {
-            return readBooks(remain, books[2], (remain) => {
-                return readBooks(remain, books[0], (remain) => {
-                    return remain
-                })
-            })
-        })
-    }
-    
-})
+function getTime() {
+    readBooks(time, books[i], (remain) => {
+        time = remain
+        i++
+        if (i < books.length) {
+            getTime()
+        }
+    })
+}
 
-
+getTime()
 
 

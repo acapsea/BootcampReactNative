@@ -3,7 +3,7 @@ function readBooksPromise(time, book) {
   return new Promise (function(resolve, reject){
     setTimeout (function() {
       let sisaWaktu = time - book.timeSpent
-      if (sisaWaktu) {
+      if (sisaWaktu >= 0) {
         console.log(`saya sudah selesai membaca ${book.name}`);
         resolve(sisaWaktu)
       } else {
