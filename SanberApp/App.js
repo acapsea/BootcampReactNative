@@ -1,17 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
 
 import Component from "./Tugas 12/Component"
-
 export default function App() {
   return (
     <Component/>
-    // <View style={styles.container}>
-    //   <Text>Hello yes</Text>
-    //   <StatusBar style="auto" />
-    // </View>
   );
 }
 
